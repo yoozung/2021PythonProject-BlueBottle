@@ -5,7 +5,7 @@
 <br>
 
 ### 시연영상
-[Link]()
+[Link](https://drive.google.com/file/d/1xdqxnHfaFWHwgVAs7wFw7NBf9ftRUGm-/view?usp=sharing)
 
 <br>
 
