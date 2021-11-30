@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAFE</title>
+    <link rel="icon" href="https://www.bluebottlecoffeekorea.com/favicon.ico"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainPage.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+    <!-- 바로 설치하지않고 cdn으로 실행  -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!--  Jquery 1.7이상 버전 있어야 실행된다 Jquery 임포트해야됨  -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- 바로 설치하지않고 cdn으로 실행  -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- 폰트  -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+    <script>
+    $(document).ready(function(){
+        $('.post').slick({
+
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover : false,
+        nextArrow:$('.next'),
+        prevArrow:$('.prev'),
+        })
+
+        $('.post_location').slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed:300,
+        infinite: true,
+        arrows:true,
+        pauseOnHover : false,
+        fade:true,
+        cssEase: 'linear',
+        nextArrow:$('.next'),
+        prevArrow:$('.prev'),
+        })
+
+
+    });
+
+    </script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="nav-container">
+            <li class="nav-item"><a href="/"><img src="../../static/img/logo.png" class="logo"></a></li>
+            <li class="nav-item"><a href="/coffee/list">COFFEE</a></li>
+            <li class="nav-item"><a href="/board/list">PRODUCT</a></li>
+            <li class="nav-item"><a href="/bean/list">BEANS</a></li>
+            <!-- 로그인 안 되어 있을 때 -->
+            {% if session.flag == False %}
+            <li class="nav-item"><a href="/member/join">JOIN</a></li>
+            <li class="nav-item"><a href="/member/login">LOGIN</a></li>
+            {% else %} <!-- 로그인 되어 있을 때 -->
+            <li class="nav-item"> <a href="/member/myinfo">MYINFO</a></li>
+            <li class="nav-item"> <a href="/member/logout">LOGOUT</a><br/>
+                {% endif %}
+        </ul>
+    </nav>
+    <div class="headerTitle">
+        BLUE <br/>
+        BOTTLE
+    </div>
+    <div class="headerContent">
+        함께하는 내일을 기원하며<br/>
+        <h1>새로운 바람이 불어오는 계절</h1><br/>
+        <h3>가을 바람은 지친 마음에 한줄기 위안을,<br/>
+            고립된 이들에게는 회복의 기운을 실어다 줍니다.<br/>
+            다가오는 한가위에 블루보틀은 내일의 바람을 싣습니다.</h3>
+    </div>
+</header>
+
+<div style="padding-top:80px; height:500px;">
+    <div class="post">
+        <div class="slick_content">
+            <img src="{{blist[1].imgLink}}"><br/>
+            {{blist[1].engName}}<br/>
+            {{blist[1].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[2].imgLink}}"><br/>
+            {{blist[2].engName}}<br/>
+            {{blist[2].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[3].imgLink}}"><br/>
+            {{blist[3].engName}}<br/>
+            {{blist[3].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[4].imgLink}}"><br/>
+            {{blist[4].engName}}<br/>
+            {{blist[4].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[5].imgLink}}"><br/>
+            {{blist[5].engName}}<br/>
+            {{blist[5].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[6].imgLink}}"><br/>
+            {{blist[6].engName}}<br/>
+            {{blist[6].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[7].imgLink}}"><br/>
+            {{blist[7].engName}}<br/>
+            {{blist[7].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[8].imgLink}}"><br/>
+            {{blist[8].engName}}<br/>
+            {{blist[8].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[9].imgLink}}"><br/>
+            {{blist[9].engName}}<br/>
+            {{blist[9].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[10].imgLink}}"><br/>
+            {{blist[10].engName}}<br/>
+            {{blist[10].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[11].imgLink}}"><br/>
+            {{blist[11].engName}}<br/>
+            {{blist[11].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[12].imgLink}}"><br/>
+            {{blist[12].engName}}<br/>
+            {{blist[12].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[13].imgLink}}"><br/>
+            {{blist[13].engName}}<br/>
+            {{blist[13].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[14].imgLink}}"><br/>
+            {{blist[14].engName}}<br/>
+            {{blist[14].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[15].imgLink}}"><br/>
+            {{blist[15].engName}}<br/>
+            {{blist[15].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[16].imgLink}}"><br/>
+            {{blist[16].engName}}<br/>
+            {{blist[16].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[17].imgLink}}"><br/>
+            {{blist[17].engName}}<br/>
+            {{blist[17].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[18].imgLink}}"><br/>
+            {{blist[18].engName}}<br/>
+            {{blist[18].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[19].imgLink}}"><br/>
+            {{blist[19].engName}}<br/>
+            {{blist[19].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[20].imgLink}}"><br/>
+            {{blist[20].engName}}<br/>
+            {{blist[20].krName}}
+        </div>
+
+        <div class="slick_content">
+            <img src="{{blist[21].imgLink}}"><br/>
+            {{blist[21].engName}}<br/>
+            {{blist[21].krName}}
+        </div>
+    </div>
+</div>
+
+<!--<div style="background-image:url('https://cdn.pixabay.com/photo/2018/05/26/01/21/wall-3430446_1280.jpg'); background-size : cover; height:3px; padding-top:0px">
+
+    </div>-->
+
+<div style="display:block; width:100%;">
+
+<aside class="asideContent" style="display:inline-flex; width:700px; margin-left:50px;  float:left;">
+        <div style="display:block;"><h3>스토어 로케이터</h3><br/><br/>
+       스토어 로케이터 매장에서는 블루보틀 컨설턴트가 고객 여러분을 따뜻하게 맞이하고 기프트 구매를 위한 맞춤형 컨설팅을 제공해드립니다.</div>
+</aside>
+
+<div style="display:inline;  width:50%; float:right;" >
+
+            <div class="post_location">
+                <div class="slick_content">
+                    <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2F350123da50e5b2293873ee5703d16c690b0afe3d-5000x3333.jpg&w=640&q=75"><br/>
+                    블루보틀 제주 카페<br/>
+                    제주특별자치도 제주시 구좌읍 번영로 2133-30<br/>
+                    운영시간: 매일 09:00 - 19:00
+                </div>
+
+                <div class="slick_content">
+                     <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2F268e98db85005f8df7635bd9376286b858c846ba-4500x3000.jpg&w=640&q=75"><br/>
+                    블루보틀 성수 카페<br/>
+                    서울특별시 성동구 아차산로 7<br/>
+                    운영시간: 매일 08:00 - 20:00
+                </div>
+
+                <div class="slick_content">
+                    <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2F5e00be969b23061a73569d1ab512478f2e41aa57-8688x5792.jpg&w=640&q=75"><br/>
+                    블루보틀 삼청 한옥<br/>
+                    서울 종로구 삼청로2길 40-3<br/>
+                    운영시간: 매일 12:00 - 20:00
+                </div>
+
+                <div class="slick_content">
+                    <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2Fb4b47283c2808a296c7b95708a6b44f1ac62ed78-6629x4129.jpg&w=640&q=75"><br/>
+                    블루보틀 역삼 카페<br/>
+                    서울 강남구 테헤란로 129 강남N타워<br/>
+                    운영시간: 평일 08:00 - 20:00, 주말 10:00 - 20:00
+                </div>
+                <div class="slick_content">
+                    <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2F4e35be59704f1d0605706f02c7810a958b33c1de-2545x1696.jpg&w=640&q=75"><br/>
+                   블루보틀 압구정 카페<br/>
+                    서울 강남구 논현로 854<br/>
+                    운영시간: 평일 08:00 - 20:00, 주말 09:00 - 20:00
+                </div>
+
+                <div class="slick_content">
+                    <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2Fdef2bfa34145b734551077cd30adf5b23e115ab6-6720x4480.jpg&w=640&q=75"><br/>
+                   블루보틀 한남 카페<br/>
+                    서울 용산구 한남대로 91<br/>
+                    운영시간: 매일 09:00 - 20:00
+                </div>
+                <div class="slick_content">
+                    <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2F7cd9d3ccf46e0af068f8a1fc57a977ff4ff6fa43-6789x4531.jpg&w=640&q=75"><br/>
+                    블루보틀 광화문 카페<br/>
+                    서울 종로구 청계천로 11<br/>
+                    운영시간: 평일 08:00 - 20:00, 주말 10:00 - 20:00
+                </div>
+
+                <div class="slick_content">
+                    <img src="https://www.bluebottlecoffeekorea.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcqfze8rg%2Fproduction%2F4c234af57cf5c5abf856ee2e7d722969925383b7-4000x2666.jpg&w=640&q=75"><br/>
+                    블루보틀 여의도 카페<br/>
+                    서울 영등포구 여의대로 108 더현대서울점 5층<br/>
+                    운영시간: 매일 10:30 - 21:00 (백화점 휴점일 제외)
+                </div>
+            </div>
+</div>
+</div>
+</body>
+</html>

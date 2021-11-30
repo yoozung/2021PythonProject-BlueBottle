@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAFE</title>
+    <link rel="icon" href="https://www.bluebottlecoffeekorea.com/favicon.ico"/>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_sj.css') }}">
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+
+     <!-- iamport  -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
+    <script>
+        function del(){
+            location.href='/board/del/{{b.num}}'
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <ul class="nav-container">
+        <li class="nav-item"><a href="/"><img src="../../static/img/logo.png" class="logo"></a></li>
+        <li class="nav-item"><a href="/coffee/list">COFFEE</a></li>
+        <li class="nav-item"><a href="/board/list">PRODUCT</a></li>
+        <li class="nav-item"><a href="/bean/list">BEANS</a></li>
+        <!-- 로그인 안 되어 있을 때 -->
+        {% if session.flag == False %}
+        <li class="nav-item"><a href="/member/join">JOIN</a></li>
+        <li class="nav-item"><a href="/member/login">LOGIN</a></li>
+        {% else %} <!-- 로그인 되어 있을 때 -->
+        <li class="nav-item"> <a href="/member/myinfo">MYINFO</a></li>
+        <li class="nav-item"> <a href="/member/logout">LOGOUT</a><br/>
+            {% endif %}
+    </ul>
+</nav>
+<form action="/board/edit" method="post">
+    <h2 class="h2-detail">PRODUCT</h2>
+    <section class="coffee-detail">
+        <div class="table-detail-div">
+            <div class="sub-detail-div">
+                <table class="product-detail-table">
+                    <tr>
+                        <td><img class="img-detail" src="{{b.imgLink}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="table-detail-text">
+                            <input id = "name_e" class="name-detail-eng" type="text" value="{{b.engName}}" name="engName" {{msg}}><br>
+                            <input id = "name_k" class="name-detail-kor" type="text" value="{{b.krName}}" name="krName" {{msg}}></h3><br>
+                            <input id = "price" class="detail-price" type="text" value="{{b.price}}" name="price" {{msg}}></h3>
+                        </td>
+                    </tr>
+                    <input type="hidden" name="num" value="{{b.num}}">
+
+                    {% if flag %}
+                    <tr>
+                        <td class="button-detail"><input class="input-detail1" type="submit" value="수정"> <input class="input-detail2" type="button" value="삭제" onclick="del()"></td>
+                    </tr>
+                    {% endif %}
+
+                     {% if paybutton %}
+                      <td class="button-detail"><input  id="check_module" class="order-btn" type="button" value="구매" ></td>
+                    {% endif %}
+
+
+                     <script type="text/javascript">
+
+                            console.log('가져온 텍스트:')
+                            // 제품 이름
+                            var product = document.getElementById("name_k").value;
+                            console.log('가져온 텍스트:', product)
+
+                            // 가격
+                            var totalPrice = document.getElementById("price").value; //입력받은금액
+                            console.log('가져온 텍스트:', totalPrice)
+
+                            var Price ;
+                            Price = totalPrice.replace(",","");
+                            console.log('가져온 텍스트:', Price)
+
+                            Price = Price.replace("₩","");    //원표시
+                            console.log('가져온 텍스트:', Price)
+
+                            Price = parseInt(Price);    //문자를 정수형 숫자로 변환
+                            console.log('가져온 텍스트:', Price)
+
+                            $("#check_module").click(function () {
+                                var IMP = window.IMP;
+                                IMP.init('imp59413408');
+                                // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+                                // i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+                                IMP.request_pay({
+                                pg: 'inicis',
+
+                                pay_method: 'card',
+
+                                merchant_uid: 'merchant_' + new Date().getTime(),
+
+                                name: product,
+                                amount: Price,
+                                buyer_email: 'iamport@test.com',
+                                buyer_name: '홍길동',
+                                buyer_tel: '010-1234-5678',
+                                buyer_addr: '서울특별시 서초구 서초동',
+                                buyer_postcode: '123-456',
+                                m_redirect_url: 'https://www.yourdomain.com/payments/complete'
+                                }, function (rsp) {
+                                console.log(rsp);
+                                if (rsp.success) {
+                                var msg = '결제가 완료되었습니다.';
+                                msg += '고유ID : ' + rsp.imp_uid;
+                                msg += '상점 거래ID : ' + rsp.merchant_uid;
+                                msg += '결제 금액 : ' + rsp.paid_amount;
+                                msg += '카드 승인번호 : ' + rsp.apply_num;
+                                } else {
+                                var msg = '결제에 실패하였습니다.';
+                                msg += '에러내용 : ' + rsp.error_msg;
+                                }
+                                alert(msg);
+                                });
+                                });
+
+                            </script>
+
+
+                </table>
+            </div>
+        </div>
+    </section>
+    <section style="height:50px;"></section>
+</form>
+</body>
+</html>

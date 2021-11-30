@@ -1,0 +1,122 @@
+ #gosuJoin {
+          border-radius: 5px;
+          color:white;
+          background:#00C7AE;
+        }
+
+        .contents {
+           background:#FAFBFB;
+           margin-top: -20px;
+           height: 900px;
+        }
+
+        table {
+           background: white;
+
+        }
+
+        div.titleblank {
+           height:50px;
+        }
+
+        h1.tableTitle{
+           color:#323232;
+           font-weight: 550;
+           text-align:center;
+           margin:50px;
+        }
+
+        table.joinContents {
+           width:420px;
+           height:460px;
+           text-align:center;
+           margin-top:15px;
+           margin-left:auto;
+           margin-right:auto;
+           border-radius: 10px;
+           border: 1px solid #F5F5F5;
+           border-spacing: 0px 5px;
+           margin-bottom: 50px;
+        }
+
+        td.top-tr{
+           padding:12px;
+        }
+
+        td.input_title, td.msg {
+           text-align:left;
+           padding:0px 0px 0px 40px;
+        }
+
+        td.input_title {
+           color:#676767;
+           font-weight:bold;
+        }
+
+        td.msg {
+           height:20px;
+           font-size:10px;
+        }
+
+        input {
+           color:#676767;
+           font-weight:bold;
+           padding:0px 0px 0px 10px;
+           width:338px;
+           height:48px;
+           border-radius: 10px;
+           border: 1px solid #F5F5F5;
+        }
+        input::placeholder {
+           color: #B5B5BC;
+        }
+
+        input:focus {
+           outline: none;
+            box-shadow: 0 0 0 2px #FED5D8;
+           border-radius: 10px;
+        }
+
+        input.joinButton, .alertContents {
+           text-align:center;
+        }
+
+        #joinMemberButton {
+           color:white;
+           background:#00A1DF;
+        }
+
+        #facebookjoin{
+           color:white;
+           background:#0D64D6;
+        }
+
+        table {
+           border-spacing: 0px 10px;
+        }
+
+        span {
+           font-size:13.5px;
+           font-weight:600;
+           color:#909090 ;
+        }
+
+        b {
+           color:#00C7AE;
+        }
+
+        button.password-show{
+             font-size:13.5px;
+             position:absolute;
+             margin-left:-48px;
+             margin-top:16px;
+             color:#00C7AE ;
+             background:white;
+             border:none;
+        }
+
+        h1#h2 {
+            display: block;
+            text-align: center;
+            padding-top:140px;
+        }

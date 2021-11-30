@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAFE | JOIN</title>
+    <link rel="icon" href="https://www.bluebottlecoffeekorea.com/favicon.ico"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_sj.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/member_form.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <ul class="nav-container">
+        <li class="nav-item"><a href="/"><img src="../../static/img/logo.png" class="logo"></a></li>
+        <li class="nav-item"><a href="/coffee/list">COFFEE</a></li>
+        <li class="nav-item"><a href="/board/list">PRODUCT</a></li>
+        <li class="nav-item"><a href="/bean/list">BEANS</a></li>
+        <!-- 로그인 안 되어 있을 때 -->
+        {% if session.flag == False %}
+        <li class="nav-item"><a href="/member/join">JOIN</a></li>
+        <li class="nav-item"><a href="/member/login">LOGIN</a></li>
+        {% else %} <!-- 로그인 되어 있을 때 -->
+        <li class="nav-item"> <a href="/member/myinfo">MYINFO</a></li>
+        <li class="nav-item"> <a href="/member/logout">LOGOUT</a><br/>
+            {% endif %}
+    </ul>
+</nav>
+
+<!-- contents -->
+<div class="contents">
+    <h1 id="h2">회원가입</h1>
+    <div class="titleblank"></div>
+    <form action="/member/join" method="post" name="joinForm" id="joinForm">
+        <table class="joinContents">
+            <tr><td  class="top-tr"></td></tr>
+            <!-- 아이디 -->
+            <tr><td class="input_title">아이디</td></tr>
+            <tr>
+                <td><input type="text" name="id"  id="id" placeholder="아이디를 입력해주세요." onClick="return checkName()" onKeyup="return checkName()"><br></td>
+            </tr>
+            <tr><td class="msg"></td></tr>
+            <tr></tr>
+            <!-- 비밀번호 -->
+            <tr><td class="input_title">비밀번호</td></tr>
+            <tr>
+                <td><span id=box><input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요." onClick="return checkPw()" onKeyup="return checkPw()"></span>
+                    <span id=click><button type="reset" class="password-show" id="password-show" onClick="ps()">표시</button></span>
+                </td>
+            </tr>
+            <tr><td class="msg"></td></tr>
+            <!-- 이메일 -->
+            <tr><td class="input_title">이메일</td></tr>
+            <tr>
+                <td><input type ="text" name="email" id="email" placeholder="example@soomgo.com" onClick="return checkId()" onKeyup="return checkId()"></td>
+            </tr>
+            <tr><td class="msg"><span id=""></span></td></tr>
+            <tr></tr>
+            <!-- 이름 -->
+            <tr><td class="input_title">이름</td></tr>
+            <tr>
+                <td><input type ="text" name="name" id="name" placeholder="이름을 입력해주세요." onClick="return checkId()" onKeyup="return checkId()"></td>
+            </tr>
+            <tr><td class="msg"></td></tr>
+            <tr></tr>
+            <tr>
+                <td><span>유저의 허락없이 게시물을 올리지 않습니다.</span><br>
+                    <span><b>이용약관</b> 및 <b>개인정보처리방침</b>에 동의합니다.</span></td>
+            </tr>
+            <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+            <tr class="submit">
+                <td><input type ="submit" id="joinMemberButton" name="joinMemberButton" value="회원가입"></td> <!-- onclick="return checkForm();" -->
+            </tr>
+            <tr></tr>
+            <tr><td  class="top-tr"></td></tr>
+
+        </table>
+    </form>
+</div>
+</body>
+</html>

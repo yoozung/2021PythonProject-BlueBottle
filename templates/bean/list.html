@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAFE</title>
+        <link rel="icon" href="https://www.bluebottlecoffeekorea.com/favicon.ico"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_sj.css') }}">
+</head>
+<body style="text-align:center; margin-left:auto; margin-right:auto;">
+<!-- nav bar -->
+<nav>
+    <ul class="nav-container">
+        <li class="nav-item"><a href="/"><img src="../../static/img/logo.png" class="logo"></a></li>
+        <li class="nav-item"><a href="/coffee/list">COFFEE</a></li>
+        <li class="nav-item"><a href="/board/list">PRODUCT</a></li>
+        <li class="nav-item"><a href="/bean/list">BEANS</a></li>
+        <!-- 로그인 안 되어 있을 때 -->
+        {% if session.flag == False %}
+        <li class="nav-item"><a href="/member/join">JOIN</a></li>
+        <li class="nav-item"><a href="/member/login">LOGIN</a></li>
+        {% else %} <!-- 로그인 되어 있을 때 -->
+        <li class="nav-item"> <a href="/member/myinfo">MYINFO</a></li>
+        <li class="nav-item"> <a href="/member/logout">LOGOUT</a><br/>
+            {% endif %}
+    </ul>
+</nav>
+
+
+
+<section class="coffee-list">
+    {% for b in beanlist %}
+    {% if loop.index0 % 4 == 0 or loop.index0 == 0 %}
+    <div class="table-div">
+        <div class="sub-div">
+            {% endif %}
+            <table class="product-table">
+                <tr>
+                    <td><img src="{{b.url}}"></td>
+                </tr>
+                <tr >
+                    <td class="table-text">
+                        <h3 class="name-eng"><a class="name-eng" href="/bean/detail/{{b.num}}"> {{b.nameE}}</a></h3><br>
+                        <h3 class="name-kor"><a class="name-kor" href="/bean/detail/{{b.num}}"><strong>{{b.nameK}}</strong></a></h3><br>
+                        <h3 class="price"><a class="price" href="/bean/detail/{{b.num}}">{{b.price}}</a></h3>
+                    </td>
+                </tr>
+            </table>
+            {% if loop.index0 % 4 == 3 or loop.last %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+    {% if session.flag == True %}
+    <input type="button" class="add" onclick="location.href='add'" value="제품 등록">
+    {% endif %}
+
+</section>
+</br>
+</body>
+</html>

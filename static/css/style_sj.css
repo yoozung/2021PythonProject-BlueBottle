@@ -1,0 +1,348 @@
+/*list.html*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+
+body {
+   font-family: Noto Sans KR,sans-serif;
+   font-weight: 100;
+}
+
+img {
+    width: 290px;
+    height: 300px;
+
+}
+
+section.coffee-list{
+    margin-top:120px;
+}
+
+div.table-div {
+    width:100%;
+    height: 500px;
+    text-align:center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+/*    padding-left:10px;
+    padding-right:10px;*/
+/*    margin-left: 30px;
+    margin-right: 30px;*/
+    /* 중앙정렬 */
+/*    display: flex;
+    justify-content: center;*/
+}
+
+div.sub-div{
+    width:95%
+    height:480px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+table.product-table{
+    text-align:center;
+    float:left;
+/*    margin-left:30px;
+    margin-right:30px;*/
+    width:25%
+   /* margin-bottom: 50px;*/
+}
+
+td.table-text{
+    padding-top:30px;
+}
+
+h3 {
+    display:inline;
+    color: #454545;
+}
+
+h3.name-eng{
+    letter-spacing :1.8px; or 0.05em;
+}
+
+h3.name-eng a{
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #454545;
+    letter-spacing: .2em;
+}
+
+a.name-eng:hover{
+    text-decoration: none;
+    color: #00A1DF;
+}
+
+h3.name-kor a {
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #454545;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: .2em;
+}
+
+a.name-kor:hover{
+    text-decoration: none;
+    color: #00A1DF;
+}
+
+h3.price a{
+    color:#898883;
+    text-decoration: none;
+    color: #ABABAB;
+    font-family: 'Noto Sans KR', sans-serif;
+     font-size: 12px;
+     letter-spacing: .2em;
+}
+
+a.price:hover{
+    text-decoration: none;
+    color: #00A1DF;
+}
+
+[class="add"] {
+    margin-top:30px;
+    margin-right:-1290px;
+    border-radius: 40px;
+    width:10%;
+    color: #00A1DF;
+     border-color: #00A1DF;
+/*    background: #00A1DF;*/
+    background: #fff;
+     padding: 12px 16px;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    position: relative;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+[class="add"]:hover {
+    margin-top:30px;
+    margin-right:-1290px;
+    border-radius: 8px;
+    width:10%;
+    color: #fff;
+     border-color: #00A1DF;
+    background: #00A1DF;
+
+}
+
+/* detail.html */
+
+h2.h2-detail {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align:center;
+    color: #525252;
+}
+
+section.coffee-detail {
+    /* 중앙 정렬 */
+     display: flex;
+    justify-content: center;
+    text-align:center;
+
+}
+
+img.img-detail {
+    width: 500px;
+    height: 520px;
+}
+
+td.table-detail-text {
+    text-align:center;
+    padding-top:0px;
+    padding-left:30px;
+    padding-bottom:13px;
+    width: 150px;
+    height:200px;
+}
+
+input.name-detail-eng {
+    /*letter-spacing :1.8px; or 0.05em;*/
+    border:none;
+
+    text-align:center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    letter-spacing: .2em;
+
+   /* 입력 css*/
+   color:#676767;
+   padding:0px 0px 0px 0px;
+   width:338px;
+   height:20px;
+/*   border-radius: 10px;
+   border: 1px solid #F5F5F5;*/
+}
+input.name-detail-kor{
+    /*letter-spacing :1.8px; or 0.05em;*/
+    border:none;
+
+    text-align:center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    letter-spacing: .2em;
+    font-weight:bold;
+
+   /* 입력 css*/
+   color:#676767;
+   padding:0px 0px 0px 0px;
+   width:338px;
+   height:20px;
+/*   border-radius: 10px;
+   border: 1px solid #F5F5F5;*/
+}
+input.detail-price{
+    /*letter-spacing :1.8px; or 0.05em;*/
+    border:none;
+
+    text-align:center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    letter-spacing: .2em;
+
+   /* 입력 css*/
+   color:#676767;
+   padding:0px 0px 0px 0px;
+   width:338px;
+   height:20px;
+/*   border-radius: 10px;
+   border: 1px solid #F5F5F5;*/
+}
+
+input.name-detail-eng::placeholder {
+   color: #B5B5BC;
+}
+
+input.name-detail-kor::placeholder {
+   color: #B5B5BC;
+}
+
+input..name-detail-eng::placeholder {
+   color: #B5B5BC;
+}
+
+input.name-detail-kor:focus {
+   outline: none;
+    box-shadow: 0 0 0 3px #89DDFF;
+   border-radius: 10px;
+}
+
+input.name-detail-eng:focus {
+   outline: none;
+    box-shadow: 0 0 0 3px #89DDFF;
+   border-radius: 10px;
+}
+
+input.detail-price:focus {
+   outline: none;
+    box-shadow: 0 0 0 3px #89DDFF;
+   border-radius: 10px;
+}
+
+/*{
+ *//*   letter-spacing :1.8px; or 0.05em;*//*
+    font-size:14px;
+    color: #454545;
+}
+
+{
+    *//*letter-spacing :1.8px; or 0.05em;*//*
+    font-size:14px;
+    color: #454545;
+}*/
+
+
+input.button-detail {
+    padding-top:20px;
+    color: #454545;
+    margin-top:0;
+
+}
+
+[class="input-detail1"] {
+    border-radius: 40px;
+    width:40%;
+    color: #fff;
+     border-color: #00A1DF;
+    background: #00A1DF;
+     padding: 12px 16px;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    position: relative;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+[class="input-detail2"] {
+    border-radius: 40px;
+    width:40%;
+    color: #fff;
+     border-color: #d03940;
+    background: #d03940;
+     padding: 12px 16px;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    position: relative;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.order-btn {
+    border:1px #3399dd solid;
+    margin:-30px auto;
+    background-color:#66aaff;
+    border-radius: 70px;
+    width:40%;
+    color: #fff;
+     padding: 12px 16px;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    position: relative;
+    }
+
+.order-btn:hover{
+    color:#fff;
+    box-shadow: 200px 0 0 0 rgba(0,0,0,0.25) inset, -200px 0 0 0 rgba(0,0,0,0.25) inset;
+    }
+
+/*.btn.btn-round {
+
+}
+.btn.btn-secondary {
+
+
+}
+button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+    cursor: pointer;
+}
+.btn {*/

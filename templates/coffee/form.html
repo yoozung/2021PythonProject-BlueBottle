@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAFE</title>
+    <link rel="icon" href="https://www.bluebottlecoffeekorea.com/favicon.ico"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <!-- end bootstrap -->
+</head>
+<body>
+<nav>
+        <ul class="nav-container" style="height:75px;">
+            <li class="nav-item"><a href="/"><img src="../../static/img/logo.png" class="logo"></a></li>
+            <li class="nav-item"><a href="/coffee/list">COFFEE</a></li>
+            <li class="nav-item"><a href="/board/list">PRODUCT</a></li>
+            <li class="nav-item"><a href="/bean/list">BEANS</a></li>
+            <!-- 로그인 안 되어 있을 때 -->
+            {% if session.flag == False %}
+            <li class="nav-item"><a href="/member/join">JOIN</a></li>
+            <li class="nav-item"><a href="/member/login">LOGIN</a></li>
+            {% else %} <!-- 로그인 되어 있을 때 -->
+            <li class="nav-item"> <a href="/member/myinfo">MYINFO</a></li>
+            <li class="nav-item"> <a href="/member/logout">LOGOUT</a><br/>
+                {% endif %}
+        </ul>
+    </nav>
+
+<div class="container beanForm">
+    <div class="row text-center" style="width:100%; margin-top:2rem;">
+        <div style="width: 74%; float:none; margin:0 auto;  border-top: 2px solid #333;" >
+            <form action="/coffee/add" method="post" >
+
+                <div class="row mb-3">
+                    <div class="col-1"></div>
+                    <label for="colFormLabel" class="col-sm-4 col-form-label" hidden>Writer</label>
+                    <div class="col-sm-6" hidden>
+                        <input type="text" class="form-control" id="colFormLabel2" value="{{session.login_id}}" name="writer">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="row mb-3 topcan">
+                    <div class="col-1"></div>
+                    <label for="colFormLabel" class="col-sm-4 col-form-label">English Name of Coffee</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="colFormLabel" name="name2">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-1"></div>
+                    <label for="colFormLabel" class="col-sm-4 col-form-label">Korean Name of Coffee</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="colFormLabel1" name="name">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-1"></div>
+                    <label for="colFormLabel" class="col-sm-4 col-form-label">Price</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="colFormLabel21" name="price">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-1"></div>
+                    <label for="colFormLabel" class="col-sm-4 col-form-label">URL</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="colFormLabel31" name="img">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

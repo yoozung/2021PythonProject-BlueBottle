@@ -1,0 +1,32 @@
+.detailImg {
+    display: block;
+    margin: 0px auto;
+}
+
+img {
+    width: 249.6px;
+    height: 249.6px;
+}
+
+.detailBean {
+    margin-left: auto;
+    margin-right: auto;
+    border-right:none;
+    border-left:none;
+    border-top:none;
+    border-bottom:none;
+}
+
+tr, th {
+    border-right:none;
+    border-left:none;
+    border-top:none;
+    border-bottom:none;
+}
+
+
+
+
+
+
+

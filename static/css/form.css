@@ -1,0 +1,42 @@
+    .beanForm .row.mb-3 .col-form-label {
+        text-align: right;
+        margin-bottom: 1.5rem;
+    }
+    .beanForm {
+        margin-top: 5rem;
+    }
+
+    .beanForm .row .topcan {
+        margin-top: 5rem;
+    }
+
+.form-control {
+    display: block;
+    width: 60%!important;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#addForm {
+    margin-top: 2rem;
+    border-top: 2px solid #676767;
+}
+
+.btn {
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+
+}
+
+
+
+
