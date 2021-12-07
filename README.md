@@ -4,11 +4,6 @@
 
 <br>
 
-### 시연영상
-[Link](https://drive.google.com/file/d/1xdqxnHfaFWHwgVAs7wFw7NBf9ftRUGm-/view?usp=sharing)
-
-<br>
-
 ### 주제 : 블루보틀 커피 용품 웹사이트
 주제 선정 이유 및 목적
  1. 수업에서 배운 것을 복습 - PYTHON, FLASK  
